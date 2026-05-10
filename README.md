@@ -35,11 +35,38 @@ Teaser 图：[assets/teaser_words.pdf](assets/teaser_words.pdf)
 
 ---
 
-## 使用说明
+## 环境依赖与安装
 
-依赖 CUDA 与若干图形学相关扩展，需按本机环境安装 Python 包与第三方库（如可微光栅化、光线追踪扩展等）。数据目录与配置项以 `configs/` 内 yaml 为准。
+以下顺序与对外部库的描述方式对齐 [NeRO 仓库](https://github.com/liuyuan-pal/NeRO) 的 **Setup** 说明；**具体命令、CUDA / PyTorch 版本请以各项目当前文档为准**。
 
-为控制仓库体积，**tiny-cuda-nn** 未纳入版本库；克隆后请在项目根目录旁自行获取 [NVlabs/tiny-cuda-nn](https://github.com/NVlabs/tiny-cuda-nn) 并编译，或按所用基线代码的说明放置到预期路径。
+### 1. Python 依赖
+
+```bash
+pip install -r requirements.txt
+```
+
+需本机已安装与 PyTorch 匹配的 **CUDA 工具链**。
+
+### 2. nvdiffrast
+
+按 NVIDIA 官方安装指引安装 **nvdiffrast**（可微光栅化）：
+
+[https://nvlabs.github.io/nvdiffrast/#installation](https://nvlabs.github.io/nvdiffrast/#installation)
+
+### 3. raytracing（可微光线追踪扩展）
+
+NeRO 使用 [ashawkey/raytracing](https://github.com/ashawkey/raytracing) 提供的扩展。本仓库内已包含与上游对应的 `raytracing/` 源码目录，请在**本仓库根目录**下按该项目的说明完成编译与安装，使 Python 能正常 `import` 该模块。
+
+项目主页与说明：[https://github.com/ashawkey/raytracing](https://github.com/ashawkey/raytracing)
+
+### 4. tiny-cuda-nn（可选）
+
+[NeRO 上游仓库](https://github.com/liuyuan-pal/NeRO) 的完整代码树中常带有 `tiny-cuda-nn` 子模块以加速部分隐式网络。**本仓库为减小体积未提交该目录**；且当前主线 Python 代码**未** `import tinycudann`。若你自行对齐上游、或本地仍习惯与 NeRO 相同目录布局，可从 [NVlabs/tiny-cuda-nn](https://github.com/NVlabs/tiny-cuda-nn) 获取源码，按官方 README 编译安装 PyTorch bindings（例如将仓库置于根目录 `tiny-cuda-nn/` 后在 `bindings/torch` 侧安装）。
+
+### 5. 其它
+
+- **COLMAP**、**Blender**：使用 `run_colmap.py`、`relight.py` 时需自行安装并在命令行中指定路径。  
+- 训练数据路径、阶段与超参以 `configs/` 下 yaml 为准。
 
 ---
 
