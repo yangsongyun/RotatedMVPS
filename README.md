@@ -6,7 +6,7 @@
 
 **论文：** IEEE ICME 2025（已录用）· [arXiv:2508.04366](https://arxiv.org/abs/2508.04366)
 
-![](assets/teaser.jpg)
+Teaser 图：[assets/teaser_words.pdf](assets/teaser_words.pdf)
 
 ---
 
@@ -42,6 +42,8 @@
 为控制仓库体积，**tiny-cuda-nn** 未纳入版本库；克隆后请在项目根目录旁自行获取 [NVlabs/tiny-cuda-nn](https://github.com/NVlabs/tiny-cuda-nn) 并编译，或按所用基线代码的说明放置到预期路径。
 
 ---
+
+
 
 ## 引用
 
