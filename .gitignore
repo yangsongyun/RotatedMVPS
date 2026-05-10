@@ -1,0 +1,89 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+.eggs/
+dist/
+*.egg
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+coverage.xml
+htmlcov/
+
+# --- Virtual env ---
+.venv/
+venv/
+ENV/
+
+# --- IDE / OS ---
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+
+# --- Cursor / local tooling ---
+.cursor/
+mcps/
+agent-tools/
+agent-transcripts/
+
+# --- Checkpoints & weights ---
+*.pth
+*.pt
+*.ckpt
+*.safetensors
+*.onnx
+*.h5
+*.hdf5
+*.npz
+*.npy
+
+# --- Training / experiment outputs ---
+data/train_vis/
+data/model/
+data/meshes/
+data/materials/
+data/relight/
+data/tensorboard/
+data/logs/
+wandb/
+runs/
+outputs/
+checkpoints/
+
+# --- Datasets (do not commit binaries; keep only local copies) ---
+data/GlossySynthetic/
+data/GlossyReal/
+data/Rotate/
+data/real/
+data/custom/
+data/hdr/
+data/point_cloud/
+
+# --- Third-party CUDA NN (clone or submodule separately; repo too large) ---
+tiny-cuda-nn/
+
+# --- Builds ---
+build/
+**/build/
+*.o
+*.obj
+*.lib
+*.dll
+*.exp
+*.pyd
+cmake-build-*/
+
+# --- Jupyter ---
+.ipynb_checkpoints/
+
+# --- Misc ---
+*.log
+*.tmp
+*.bak
+~$*
